@@ -46,7 +46,11 @@
     ];
 
 
-    const productsArr = products.filter(product => "photos" in product && product.photos.length !== 0);
+    /* const productsArr = products.filter(product => "photos" in product && product.photos.length !== 0); */
+
+    const productsArr = products.filter(function (product) {
+      return (("photos" in product) && product.photos.length !== 0);
+    });
     console.log(productsArr);
 
     const sortArr = productsArr.sort(function (a, b) {
